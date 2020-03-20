@@ -18,7 +18,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One&display=swap" rel="stylesheet"> 
 
 </head>
 <body>
@@ -26,34 +26,37 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light techfont custom-navbar bg-light">
         <div class="container">
+            
             <ul class="navbar-nav">
-                <li><a href="{% url 'post_list' %}" class="navbar-brand bigbrand">My Blog</a></li>
+                <li><a href="{% url 'post_list' %}" class="navbar-brand bigbrand">Blog</a></li>
                 <li><a href="{% url 'about' %}" class="nav-link">About</a></li>
                 <li><a href="https://www.github.com/cevher" class="nav-link">Github</a></li>
                 <li><a href="https://www.linkedin.com/in/cevher-%C3%B6zden-b43b6290/" class="nav-link">Linkedin</a></li>
             </ul> 
-            <ul class="nav navbar-nav navbar-right">
+        
+        
+            <ul class="navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                 <li>
-                    <a href="{% url 'post_new'%}">New Post</a>
+                    <a class="nav-link" href="{% url 'post_new'%}">New Post</a>
                 </li>
                 <li>
-                    <a href="{% url 'post_draft_list'%}">Drafts</a>
+                    <a  class="nav-link" href="{% url 'post_draft_list'%}">Drafts</a>
                 </li>
                 <li>
-                    <a href="{% url 'logout'%}">Logout</a>
+                    <a  class="nav-link" href="{% url 'logout'%}">Logout</a>
                 </li>
                 <li>
-                    <a>Welcome: {{user.username}}</a>
+                    <a class="navbar-link">Welcome: {{user.username}}</a>
                 </li>
                 {% else %}
                 <li>
-                    <a class='nav navbar-right' href="{% url 'login'%}"><span class="glyphicon glyphicon-face"></span></a>
+                    <a class='nav-link navbar-right' href="{% url 'login' %}">Login</span></a>
                 </li>
                 {% endif %}
 
             </ul>
-
+        
         </div>
     </nav> 
     
